@@ -36,7 +36,7 @@ class _LOginPageState extends State<LOginPage> {
             decoration: InputDecoration(
                 border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                hintText: "Password",
+                hintText: "Type Over Here",
                 labelText: "Password"),
           ),
           Padding(
