@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myflutterstudy/stack_widget.dart';
 import '';
 import 'Calculator.dart';
+import 'Flipkart.dart';
 import 'Flutter_Test.dart';
 import 'Game.dart';
 import 'Image_File.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const LOginPage(),
+      home: const FlipkartUI(),
     );
   }
 }
