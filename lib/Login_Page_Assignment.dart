@@ -16,7 +16,7 @@ class _LOginPageState extends State<LOginPage> {
       appBar: AppBar(
         title: Center(child: Text("facebook")),
       ),
-      body:ListView(children: [ Column(
+      body:ListView(children: [ElevatedButton(onPressed: (){}, child: Text("button")) ,Column(
         children: [SizedBox(height:30 ),Text("Facebook Login",style:TextStyle(fontSize: 20),),
           SizedBox(
             height: 50,
@@ -64,14 +64,19 @@ class _LOginPageState extends State<LOginPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Container(
-                      height: 50,
-                      width: 80,
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text(
-                          "Click Here",
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                    InkWell(onTap:(){
+                     // Navigator.of(context).pushNamed("FlipkartUI");
+                      //Navigator.of(context).pushReplacementNamed("FlipkartUI");
+                    } ,
+                      child: Container(
+                        height: 50,
+                        width: 80,
+                        color: Colors.blue,
+                        child: Center(
+                          child: Text(
+                            "Click Here",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
                         ),
                       ),
                     ),

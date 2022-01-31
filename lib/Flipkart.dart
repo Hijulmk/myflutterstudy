@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class FlipkartUI extends StatefulWidget {
   const FlipkartUI({Key? key}) : super(key: key);
@@ -10,39 +11,17 @@ class FlipkartUI extends StatefulWidget {
 class _FlipkartUIState extends State<FlipkartUI> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0),
-        child: AppBar(
-          automaticallyImplyLeading: false, // hides leading widget
-          flexibleSpace:  Column(
-        children: [Row(
-          children: [
-            SafeArea(child: Text("Flipkart",)),
-          ],
-        ),
-          TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        hintText: 'Enter a search term',
-      ),
-    ),],
-    ),actions: [IconButton(
-      onPressed: () {},
-      icon: Icon(Icons.notifications),
-    ),IconButton(
-      onPressed: () {},
-      icon: Icon(Icons.shopping_cart),
+    return Scaffold(appBar: PreferredSize(preferredSize: Size.fromHeight(80.0), child: AppBar(title:Text("Flipkart"),
+      actions: [IconButton(onPressed: () {}, icon: Icon(Icons.notifications),),IconButton(
+      onPressed: () {}, icon: Icon(Icons.shopping_cart),
     ),IconButton(
       icon: Icon(
-        Icons.account_circle,
-        color: Colors.white,
-      ),
+        Icons.account_circle, color: Colors.white),
       onPressed: () {
         // do something
       },
     ),
-    ],),
-        )
+    ],),)
 
     ,body: ListView(children: [
       CarouselSlider(items:[Container(margin: EdgeInsets.all(3),decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
@@ -154,12 +133,7 @@ class _FlipkartUIState extends State<FlipkartUI> {
           ],),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(children: [Container(height: 200,width: MediaQuery.of(context).size.width,decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage('https://www.gizbot.com/img/2019/11/flipkart-offers-up-to-70-off-on-boat-headphones-and-speakers-1573112398.jpg'),
-                    fit: BoxFit.fill,
-                  ),),
-                )],
+            child: Column(children: [Container(height: 200,width: MediaQuery.of(context).size.width,child: Image.asset("assets/images/Boat.png"),),],
             ),
           )
 
@@ -170,10 +144,10 @@ class _FlipkartUIState extends State<FlipkartUI> {
 
 
       ),
-        bottomNavigationBar: BottomNavigationBar(items: [BottomNavigationBarItem(title: Text("Home",style: TextStyle(color:Colors.grey),),icon:Icon(Icons.home,color: Colors.grey),),
-          BottomNavigationBarItem(title: Text("Super Coin",style: TextStyle(color: Colors.grey),),icon:Icon(Icons.all_inclusive_sharp,color: Colors.grey),),
-          BottomNavigationBarItem(title: Text("Credit",style: TextStyle(color: Colors.grey),),icon:Icon(Icons.money_off,color: Colors.grey),),
-          BottomNavigationBarItem(title: Text("Game Zone",style:TextStyle(color: Colors.grey)),icon:Icon(Icons.videogame_asset_rounded,color: Colors.grey),)],));
+        bottomNavigationBar: BottomNavigationBar(unselectedLabelStyle: TextStyle(fontSize: 20),items: [BottomNavigationBarItem(label: "Home",icon:Icon(Icons.home,color: Colors.grey),),
+          BottomNavigationBarItem(label: "Super Coin",icon:Icon(Icons.all_inclusive_sharp,color: Colors.grey),),
+          BottomNavigationBarItem(label: "Credit",icon:Icon(Icons.money_off,color: Colors.grey),),
+          BottomNavigationBarItem(label: "Game Zone",icon:Icon(Icons.videogame_asset_rounded,color: Colors.grey),)],));
   }
 }
 
